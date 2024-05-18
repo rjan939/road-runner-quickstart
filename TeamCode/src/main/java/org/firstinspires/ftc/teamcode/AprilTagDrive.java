@@ -20,27 +20,22 @@ import org.firstinspires.ftc.vision.apriltag.AprilTagProcessor;
 
 import java.util.List;
 
-/**
- * Experimental extension of MecanumDrive that uses AprilTags for relocalization.
- * <p>
- * Released under the BSD 3-Clause Clear License by j5155 from 12087 Capital City Dynamics
- * Portions of this code made and released under the BSD 3-Clause Clear License by Michael from 14343 and by Ryan Brott
- */
+
 public class AprilTagDrive extends MecanumDrive {
     @Config
-    static class Params {
+    public static class Params {
         // distance FROM robot center TO camera (inches)
         // TODO: tune
-        static Vector2d cameraOffset = new Vector2d(
-                -6,
-                4);
+        public static Vector2d cameraOffset = new Vector2d(
+                0,
+                41);
 
         /*
          * Q model covariance (trust in model), default 0.1 HIGHER IS LESS TRUST
          * R sensor covariance (trust in sensor), default 0.4
          */
-        static double kalmanFilterQ = 0.4;
-        static double kalmanFilterR = 0.1;
+        public static double kalmanFilterQ = 0.1;
+        public static double kalmanFilterR = 0.4;
     }
 
     Vector2d cameraOffset;
@@ -156,7 +151,7 @@ public class AprilTagDrive extends MecanumDrive {
         }
     }
 
-    // this custom position library credit Michael from team 14343 (@overkil on Discord)
+    // this custom position library(more accurate) credit Michael from team 14343 (@overkil on Discord)
     // TODO: will need to be changed for 24-25 season
     public static AprilTagLibrary getCenterStageTagLibrary() {
         return new AprilTagLibrary.Builder()
