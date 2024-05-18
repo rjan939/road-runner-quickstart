@@ -20,7 +20,12 @@ import org.firstinspires.ftc.vision.apriltag.AprilTagProcessor;
 
 import java.util.List;
 
-
+/**
+ * Experimental extension of MecanumDrive that uses AprilTags for relocalization.
+ * <p>
+ * Released under the BSD 3-Clause Clear License by j5155 from 12087 Capital City Dynamics
+ * Portions of this code made and released under the BSD 3-Clause Clear License by Michael from 14343 and by Ryan Brott
+ */
 public class AprilTagDrive extends MecanumDrive {
     @Config
     public static class Params {
